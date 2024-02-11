@@ -37,27 +37,31 @@ class _IbmScreenState extends State<BmiScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Item1(
-                  txt: 'Female',
-                  onTap: () {
-                    setState(() {
-                      isFemaleSelected = true;
-                      isMaleSelected = false;
-                      selectedGender = 'Female';
-                    });
-                  },
-                  isSelected: isFemaleSelected,
+                FittedBox(
+                  child: Item1(
+                    txt: 'Female',
+                    onTap: () {
+                      setState(() {
+                        isFemaleSelected = true;
+                        isMaleSelected = false;
+                        selectedGender = 'Female';
+                      });
+                    },
+                    isSelected: isFemaleSelected,
+                  ),
                 ),
-                Item1(
-                  txt: 'Male',
-                  onTap: () {
-                    setState(() {
-                      isFemaleSelected = false;
-                      isMaleSelected = true;
-                      selectedGender = 'Male';
-                    });
-                  },
-                  isSelected: isMaleSelected,
+                FittedBox(
+                  child: Item1(
+                    txt: 'Male',
+                    onTap: () {
+                      setState(() {
+                        isFemaleSelected = false;
+                        isMaleSelected = true;
+                        selectedGender = 'Male';
+                      });
+                    },
+                    isSelected: isMaleSelected,
+                  ),
                 ),
               ],
             ),
