@@ -18,6 +18,7 @@ class _CalcButtonState extends State<CalcButton> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
+      height: 60,
       decoration: BoxDecoration(
         color: Colors.blueGrey,
         borderRadius: BorderRadius.circular(16),
@@ -28,6 +29,7 @@ class _CalcButtonState extends State<CalcButton> {
             () {
               result = (weight / pow((height / 100), 2)).ceilToDouble();
               showDialog(
+                barrierDismissible: false,
                 context: context,
                 builder: (context) => const Result(),
               );

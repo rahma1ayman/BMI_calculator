@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:ibm_calculator/screens/bmiScreen.dart';
 import 'package:ibm_calculator/widgets/calc_button.dart';
 import 'package:ibm_calculator/widgets/item2.dart';
+
+import '../screens/loginScreen.dart';
 
 class Result extends StatelessWidget {
   const Result({super.key});
@@ -29,20 +32,30 @@ class Result extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             RichText(
-                text: const TextSpan(children: [
-              TextSpan(
-                text: 'Gender: ',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 23,
-                ),
-              )
-            ])),
+              text: TextSpan(
+                children: [
+                  const TextSpan(
+                    text: 'Gender:      ',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 23,
+                    ),
+                  ),
+                  TextSpan(
+                    text: selectedGender,
+                    style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 23,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ],
+              ),
+            ),
             RichText(
               text: TextSpan(
                 children: [
                   const TextSpan(
-                    text: 'Age:         ',
+                    text: 'Age:          ',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 23,
@@ -62,7 +75,7 @@ class Result extends StatelessWidget {
               text: TextSpan(
                 children: [
                   const TextSpan(
-                    text: 'Result:     ',
+                    text: 'Result  => ',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 23,
@@ -83,7 +96,9 @@ class Result extends StatelessWidget {
       ),
       actions: [
         MaterialButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           color: Colors.red,
           child: const Text(
             'Cancel',
@@ -91,7 +106,31 @@ class Result extends StatelessWidget {
           ),
         ),
         MaterialButton(
-          onPressed: () {},
+          onPressed: () {
+            showDialog(
+              barrierDismissible: false,
+              context: context,
+              builder: (context) => AlertDialog(
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20)),
+                title: TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Login(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    'Thank You',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                ),
+                backgroundColor: Colors.black,
+              ),
+            );
+          },
           color: Colors.green,
           child: const Text(
             'Okay',

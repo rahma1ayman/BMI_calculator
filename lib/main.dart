@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ibm_calculator/screens/bmiScreen.dart';
 import 'package:ibm_calculator/screens/loginScreen.dart';
-void main()
-{
+
+void main() {
   runApp(const IbmCalculator());
 }
-
 
 class IbmCalculator extends StatelessWidget {
   const IbmCalculator({super.key});

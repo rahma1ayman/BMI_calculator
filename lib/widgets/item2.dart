@@ -15,8 +15,8 @@ class _Item2State extends State<Item2> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
-      width: 195,
+      height: 230,
+      width: 200,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
         color: Colors.blueGrey[200],
