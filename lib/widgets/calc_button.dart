@@ -18,7 +18,7 @@ class _CalcButtonState extends State<CalcButton> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 60,
+      height: 65,
       decoration: BoxDecoration(
         color: Colors.blueGrey,
         borderRadius: BorderRadius.circular(16),
@@ -39,7 +39,10 @@ class _CalcButtonState extends State<CalcButton> {
         child: const Text(
           'Calculate',
           style: TextStyle(
-              color: Colors.white, fontSize: 35, fontWeight: FontWeight.bold),
+            color: Colors.white,
+            fontSize: 35,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );

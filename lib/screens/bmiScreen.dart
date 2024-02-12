@@ -20,6 +20,7 @@ class _IbmScreenState extends State<BmiScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
         elevation: 0,
         title: const Text(
@@ -30,38 +31,34 @@ class _IbmScreenState extends State<BmiScreen> {
         backgroundColor: Colors.blueGrey,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(8),
+        padding: const EdgeInsets.only(top: 8.0, left: 8.0, right: 8.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                FittedBox(
-                  child: Item1(
-                    txt: 'Female',
-                    onTap: () {
-                      setState(() {
-                        isFemaleSelected = true;
-                        isMaleSelected = false;
-                        selectedGender = 'Female';
-                      });
-                    },
-                    isSelected: isFemaleSelected,
-                  ),
+                Item1(
+                  txt: 'Female',
+                  onTap: () {
+                    setState(() {
+                      isFemaleSelected = true;
+                      isMaleSelected = false;
+                      selectedGender = 'Female';
+                    });
+                  },
+                  isSelected: isFemaleSelected,
                 ),
-                FittedBox(
-                  child: Item1(
-                    txt: 'Male',
-                    onTap: () {
-                      setState(() {
-                        isFemaleSelected = false;
-                        isMaleSelected = true;
-                        selectedGender = 'Male';
-                      });
-                    },
-                    isSelected: isMaleSelected,
-                  ),
+                Item1(
+                  txt: 'Male',
+                  onTap: () {
+                    setState(() {
+                      isFemaleSelected = false;
+                      isMaleSelected = true;
+                      selectedGender = 'Male';
+                    });
+                  },
+                  isSelected: isMaleSelected,
                 ),
               ],
             ),

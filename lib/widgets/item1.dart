@@ -23,25 +23,23 @@ class Item1 extends StatelessWidget {
         ),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Expanded(
-            child: Column(
-              children: [
-                (txt == 'Female')
-                    ? const Icon(
-                        Icons.female,
-                        size: 150,
-                      )
-                    : const Icon(
-                        Icons.male,
-                        size: 150,
-                      ),
-                Text(
-                  txt,
-                  style: const TextStyle(
-                      fontSize: 40, fontWeight: FontWeight.bold),
-                )
-              ],
-            ),
+          child: Column(
+            children: [
+              (txt == 'Female')
+                  ? const Icon(
+                      Icons.female,
+                      size: 150,
+                    )
+                  : const Icon(
+                      Icons.male,
+                      size: 150,
+                    ),
+              Text(
+                txt,
+                style:
+                    const TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              )
+            ],
           ),
         ),
       ),

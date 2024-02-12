@@ -44,6 +44,7 @@ class _Item2State extends State<Item2> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 FloatingActionButton(
+                  heroTag: widget.title == 'Age' ? 'age++' : 'weight++',
                   backgroundColor: Colors.blueGrey,
                   onPressed: () {
                     setState(() {
@@ -56,6 +57,7 @@ class _Item2State extends State<Item2> {
                   ),
                 ),
                 FloatingActionButton(
+                  heroTag: widget.title == 'Age' ? 'age--' : 'weight--',
                   backgroundColor: Colors.blueGrey,
                   onPressed: () {
                     setState(() {
